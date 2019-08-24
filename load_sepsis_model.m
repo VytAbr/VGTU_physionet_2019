@@ -1,7 +1,10 @@
 function model = load_sepsis_model()
 
-    model{1} = load('Tree2');
-    model{2} = load('Tree_med_All2');
-    model{3} = load('Tree_long4');
+    model{1,1} = load('m_short_0823');
+    model{2,1} = load('norm_s');
+    model{1,2} = load('m_medium_0823_1');
+    model{2,2} = load('norm_m');
+    model{1,3} = load('m_long_0824');
+    model{2,3} = load('norm_l');
 %     model = [];
 end
