@@ -43,7 +43,7 @@ f8(isnan(f8)) = 0; % Nan to zero
 F = [f1 f2 f3 f4 f5 f6 f7 f8]; %8 sets with 111 features
 
 %     normalize
-f_N = (F - model{2,2}.normalization(1,:)) ./ model{2,2}.normalization(1,:);
+f_N = (F - model{2,2}.normalization(1,:)) ./ model{2,2}.normalization(2,:);
 
 
 featuresX = f_N;

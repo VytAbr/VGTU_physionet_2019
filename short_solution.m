@@ -115,7 +115,7 @@ F = [f2 f3 f4 f5 f6 f7 f8];
 
     %     normalize all
 % f_N = normalize(F,1);
-f_N = (F - model{2,1}.normalization(1,:)) ./ model{2,1}.normalization(1,:);
+f_N = (F - model{2,1}.normalization(1,:)) ./ model{2,1}.normalization(2,:);
 
 featuresX = f_N;
 %     fes_ALL=[];
