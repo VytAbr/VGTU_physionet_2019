@@ -3,12 +3,15 @@ function Y = getStatisticalFeatures(X, frameSize)
 % X = Ta(:,7);
 
 Xs1 = size(X,1);
+% X = data;
 Y=[];
+remainder= mod(Xs1, frameSize);
+    
+% calculate for 7 features
 for i = 1:7
     % calculate featuers for 10hour frames
     % frameSize = 10;
 
-    remainder= mod(Xs1, frameSize);
 
     % last frame can be empty or filled with nans
     % or last frame duration is 'frameSize'.... not tested
@@ -30,7 +33,7 @@ for i = 1:7
     % maximum found values with other values: max2first. max2min
     feat(4) = max(X_winE)-(X_winE(1));
     feat(5) = max(X_winE)-min(X_winE);
-    % features with change every 10hours: lastdiff, diffstd, maxdiff
+    % features with change every 'framesize' hours: lastdiff, diffstd, maxdiff
     feat(6) = X_windiff(end);
     feat(7) = std(X_windiff);
     feat(8) = max(abs(X_windiff));
@@ -39,3 +42,5 @@ for i = 1:7
     clear feat
 
 end
+
+Y = Y(:)';
