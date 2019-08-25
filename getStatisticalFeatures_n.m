@@ -25,7 +25,7 @@ for i = 1:9
 %     std of signal
     feat(1) = std(X(:,i),'omitnan');
 
-      = mean(X_windowd,'omitnan');
+    X_winE = mean(X_windowd,'omitnan');
     X_windiff = diff(X_winE);
     % basic statistics: std_fr, last2fr
     feat(2) = std(X_winE);
